@@ -1,0 +1,13 @@
+{
+  "name": "projeto1",
+  "version": "1.0.0",
+  "description": "> API RESTful\r         - StatusCode\r         - MVC, (frontend separado, react + ts )\r         - FireBase/FireStore (Para login de admin)\r         - JWT (Para autenticação de usuario) ??\r         - Chamada para API externa de produtos: https://dummyjson.com/products\r         - Envio de E-mail\r         - Download de PDF\r         - Implementar testes????",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
