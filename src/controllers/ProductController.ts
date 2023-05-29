@@ -1,5 +1,6 @@
 import axios from "axios"
 import { Request, Response } from "express"
+import { sendEmailHTML } from "../../helpers/mail/mailer"
 
 class ProductController {
 
@@ -20,31 +21,17 @@ class ProductController {
         } catch (e) {
             console.log(e)
         }
+    }
 
+    static async sendEmail(req: Request, res: Response) {
+        try {
+            console.log('Enviando email....');
+            sendEmailHTML("victorrochasantos7@gmail.com", "Recebemos o seu pedido!", "<p>Eai vitao</p>")
+            res.send('Enviou')
 
-
-
-
-
-
-        // .then((resp)=> resp.json())
-
-        // then((resp) => resp.json()).then((data)=>{
-
-
-        // then((resp) => {
-        //     res.send(data)
-        // }).catch((e) => {
-        //     console.log(`Erro: ${e}`);
-
-        // })
-
-
-
-        // return res.status(200).json({
-        //     // message: "Products Listsss",
-        //     products: products
-        // })
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
