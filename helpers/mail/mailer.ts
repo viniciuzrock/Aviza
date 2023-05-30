@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
 transporter.use('compile', inLineCss());
 export const sendEmailHTML = (to: string, subject: string, body: string) => {
     const mailOptions = {
-        from: user,
+        from: 'no-reply@teste.com',//user,
         to,
         subject,
         // html: body
