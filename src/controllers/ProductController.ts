@@ -26,7 +26,7 @@ class ProductController {
     static async sendEmail(req: Request, res: Response) {
         try {
             console.log('Enviando email....');
-            sendEmailHTML("victorrochasantos7@gmail.com", "Recebemos o seu pedido!", "<p>Eai vitao</p>")
+            sendEmailHTML("victorrochasantos7@gmail.com", "Recebemos o seu pedido!", 'html')//usando outro texto
             res.send('Enviou')
 
         } catch (error) {
