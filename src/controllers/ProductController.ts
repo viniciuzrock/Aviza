@@ -23,6 +23,16 @@ class ProductController {
         }
     }
 
+    static async closeCart(req: Request, res: Response) {
+        //função que irá disparar o e-mail após a conclusão do carrinho
+        try {
+
+        } catch (error) {
+
+        }
+    }
+
+
     static async sendEmail(req: Request, res: Response) {
         try {
             console.log('Enviando email....');

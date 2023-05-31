@@ -7,7 +7,6 @@ class UserController {
     static async register(req: Request, res: Response) {
         try {
             const { email, password } = req.body;
-            // const auth = firebaseAuth.getAuth(firebaseApp)
             const auth = getAuth()
             await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
                 const user = userCredential.user;
@@ -31,6 +30,9 @@ class UserController {
     static async login(req: Request, res: Response) {
         try {
             const { email, password } = req.body
+            console.log('Bateu');
+            console.log(email, password);
+
             const auth = getAuth(firebaseApp)
             await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
                 res.status(200).json({
