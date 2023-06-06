@@ -1,7 +1,8 @@
 import axios from "axios"
 import { Request, Response } from "express"
 import { sendEmailHTML } from "../../helpers/mail/mailer"
-
+import fs from 'fs'
+import path, { dirname } from "path"
 class ProductController {
 
     static async getProducts(req: Request, res: Response) {
@@ -10,7 +11,7 @@ class ProductController {
 
                 const products = resp.data.products
                 const productsList = []
-                for (let x: number = 0; x <= 3; x++) {
+                for (let x: number = 0; x <= 9; x++) {
                     productsList.push(products[x])
                 }
                 res.json(productsList)
@@ -28,25 +29,15 @@ class ProductController {
             //quando completar a venda, criar uma arquivo html com o fs
             //colocar os dados da compra nele, entao enviar o email
             const { image, name, price } = req.body
-            const templateTeste = `
-                <style>
-                    img {
-                        width: 300px;
-                        height: 300px;
-                        font-family: sans-serif;
-                    }
-                </style>
-
-                <h1>Obrigado pela compra!</h1>
-                <p>Detalhes do pedido: </p>
-                <p>Nome: ${name}</p>
-                <p>Preço: ${price}</p>
-                <p>Imagem:
-                    <img src="${image}" alt="" />
-                </p>
-            `
-
-            sendEmailHTML("vinir.santoss@gmail.com", "Recebemos o seu pedido!", templateTeste)
+            const currentDirectory = __dirname
+            const templatePath = path.resolve(currentDirectory, '../../helpers/mail/template.html')
+            const template = fs.readFileSync(templatePath, 'utf8')
+            const templateFormat = template.replace('{{name}}', name).replace('{{price}}', price).replace('{{image}}', image)
+            await sendEmailHTML("vinir.santoss@gmail.com", "Recebemos o seu pedido!", templateFormat).then(() => {
+                console.log('Email enviado')
+            }).catch((e) => {
+                console.log(e)
+            })
         } catch (error) {
             console.log('[Error Email]:' + error);
 
