@@ -7,9 +7,11 @@ class ProductController {
 
     static async getProducts(req: Request, res: Response) {
         try {
-            await axios.get("https://dummyjson.com/products").then((resp) => {
+            // await axios.get("https://dummyjson.com/products").then((resp) => {
+            await axios.get("https://api.mercadolibre.com/sites/MLB/search?q=all").then((resp) => {
+                // console.log(resp.data.results);
 
-                const products = resp.data.products
+                const products = resp.data.results//resp.data.products
                 const productsList = []
                 for (let x: number = 0; x <= 9; x++) {
                     productsList.push(products[x])
