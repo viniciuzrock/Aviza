@@ -7,6 +7,7 @@
         - FireBase/FireStore (Para login de admin)
         - JWT (Para autenticação de usuario) ??
         - Chamada para API externa de produtos: https://dummyjson.com/products
+        - logger
         - Envio de E-mail
         - Download de PDF
         - Implementar testes????

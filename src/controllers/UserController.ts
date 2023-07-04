@@ -10,6 +10,8 @@ class UserController {
             const auth = getAuth()
             await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
                 const user = userCredential.user;
+                console.log('Usuário criado!');
+
                 return res.status(201).json({
                     message: 'Usuário criado',
                     data: user
@@ -30,11 +32,10 @@ class UserController {
     static async login(req: Request, res: Response) {
         try {
             const { email, password } = req.body
-            console.log('Bateu');
-            console.log(email, password);
 
             const auth = getAuth(firebaseApp)
             await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+                console.log('Usuário logado!');
                 res.status(200).json({
                     data: userCredential.user
                 })

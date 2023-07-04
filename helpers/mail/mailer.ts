@@ -25,7 +25,7 @@ export const sendEmailHTML = async (to: string, subject: string, body: string) =
     }
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log(error)
+            console.log('[Erro no envio de e-mail]: ' + error)
         } else {
             console.log('Email sent: ' + info.response)
         }
