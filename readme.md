@@ -10,7 +10,9 @@
         - logger
         - Envio de E-mail
         - Download de PDF
-        - Implementar testes????
+        - Implementar testes(jest)
+        - documentação com swagger
+        - Verificar a implantação do rabbitMQ / Kafka
 
     > SPA
         - Tela de login (sem cadastro, pois será feito com database)

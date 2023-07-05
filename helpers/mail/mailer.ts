@@ -6,7 +6,6 @@ import handlebars from "handlebars";
 const user: string = 'vinir.santoss@gmail.com'
 const pass: string = 'jzudejadapwtxmhu'
 const port: number = 465
-var inLineCss = require('nodemailer-juice');
 
 const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -19,7 +18,6 @@ const transporter = nodemailer.createTransport({
     }
 })
 
-transporter.use('compile', inLineCss());
 export const sendEmailHTML = async (to: string, subject: string, body: string) => {
 
     const mailOptions = {
@@ -29,7 +27,7 @@ export const sendEmailHTML = async (to: string, subject: string, body: string) =
         html: body
     }
 
-    return new Promise<void>((resolve, reject) => {
+    return await new Promise<void>((resolve, reject) => {
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log('[Erro no envio de e-mail]: ' + error);

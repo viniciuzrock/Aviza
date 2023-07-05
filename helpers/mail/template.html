@@ -9,10 +9,11 @@
 <body>
     <h1>Detalhes do Pedido</h1>
     {{#each products}}
-    <h2>Detalhes do produto {{@index}}</h2>
+    <h2>Detalhes do {{this.productIndex}}º produto </h2>
     <p>Nome: {{this.name}}</p>
     <p>Preço: {{this.price}}</p>
-    <p>Imagem: <img src="{{this.image}}" alt=""></p>
+    <p>Imagem:</p>
+    <img src="{{this.image}}" alt="">
     <hr>
     {{/each}}
 </body>
