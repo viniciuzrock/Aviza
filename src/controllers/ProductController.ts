@@ -3,6 +3,14 @@ import { Request, Response } from "express"
 import { sendEmailHTML } from "../../helpers/mail/mailer"
 import fs from 'fs'
 import path, { dirname } from "path"
+import handlebars from 'handlebars';
+
+interface Product {
+    name: string;
+    price: number;
+    image: string;
+}
+
 class ProductController {
 
     static async getProducts(req: Request, res: Response) {
@@ -29,20 +37,30 @@ class ProductController {
     static async completePurchase(req: Request, res: Response) {
         try {
             console.log('Concluindo pedido...');
+            const data: Product[] = req.body
+            data.push(req.body)
+            console.log(data.pop());//REMOVENDO ULTIMO ITEM DA LISTA
 
-            //função que irá disparar o e-mail após a conclusão do carrinho
-            //quando completar a venda, criar uma arquivo html com o fs
-            //colocar os dados da compra nele, entao enviar o email
-            const { image, name, price } = req.body
+            const templateData = {
+                products: data.map((product, index) => ({
+                    productIndex: index + 1,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                })),
+            };
+
             const currentDirectory = __dirname
             const templatePath = path.resolve(currentDirectory, '../../helpers/mail/template.html')
             const template = fs.readFileSync(templatePath, 'utf8')
-            const templateFormat = template.replace('{{name}}', name).replace('{{price}}', price).replace('{{image}}', image)
-            // await sendEmailHTML("vinir.santoss@gmail.com", "Recebemos o seu pedido!", templateFormat).then(() => {
-            //     console.log('Email enviado!')
-            // }).catch((e) => {
-            //     console.log(e)
-            // })
+            const compiledTemplate = handlebars.compile(template);
+            const html = compiledTemplate(templateData)
+
+            await sendEmailHTML("vinir.santoss@gmail.com", "Recebemos o seu pedido!", html).then(() => {
+                console.log('Email enviado!')
+            }).catch((e) => {
+                console.log(e)
+            })
         } catch (error) {
             console.log('[Error Email]:' + error);
 
