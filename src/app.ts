@@ -4,6 +4,7 @@ import ProductRoutes from "./routes/ProductRoutes"
 import UserRoutes from "./routes/UserRoutes"
 import path from "path"
 import Logger from "../config/logger"
+import morganMiddleware from "./middlewares/morgan"
 
 const cors = require("cors")
 const port = config.get<number>("port")
@@ -14,8 +15,8 @@ app.use(cors({
     origin: "*",
     credentials: true
 }))
-
 app.use(express.json())
+app.use(morganMiddleware)
 app.use("/api/products", ProductRoutes)
 app.use("/api/users", UserRoutes)
 app.use(express.static(path.join(__dirname, 'public')))

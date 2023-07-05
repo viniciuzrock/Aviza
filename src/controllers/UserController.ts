@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express"
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import firebaseApp from "../../config/firebase";
+import Logger from "../../config/logger";
 
 class UserController {
 
@@ -41,6 +42,7 @@ class UserController {
                 })
 
             }).catch((e) => {
+                Logger.warn('Usuário não autorizado!')
                 res.status(401).json({
                     message: '[Erro FirebaseAuth]: ' + e.message
                 })
