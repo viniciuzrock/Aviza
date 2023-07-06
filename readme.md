@@ -7,9 +7,12 @@
         - FireBase/FireStore (Para login de admin)
         - JWT (Para autenticação de usuario) ??
         - Chamada para API externa de produtos: https://dummyjson.com/products
+        - logger
         - Envio de E-mail
         - Download de PDF
-        - Implementar testes????
+        - Implementar testes(jest)
+        - documentação com swagger
+        - Verificar a implantação do rabbitMQ / Kafka
 
     > SPA
         - Tela de login (sem cadastro, pois será feito com database)

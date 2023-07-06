@@ -1,0 +1,98 @@
+2023-07-05 18:31:43 -0300 - [32minfo[39m: [32mServer online in port: 3010[39m
+2023-07-05 18:33:45 -0300 - [32minfo[39m: [32mServer online in port: 3010[39m
+2023-07-05 18:42:25 -0300 - [32minfo[39m: [32mServer online in port: 3010[39m
+2023-07-05 18:43:14 -0300 - [32minfo[39m: [32mServer online in port: 3010[39m
+2023-07-05 18:43:36 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 296178 - 826.462 ms[39m
+[34m[39m
+2023-07-05 18:43:37 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 296178 - 642.351 ms[39m
+[34m[39m
+2023-07-05 18:48:17 -0300 - [32minfo[39m: [32mServer online in port: 3010[39m
+2023-07-05 18:48:32 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 18:48:32 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 73 - 356.988 ms[39m
+[34m[39m
+2023-07-05 18:49:07 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 18:49:07 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 73 - 300.852 ms[39m
+[34m[39m
+2023-07-05 18:49:48 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 18:49:49 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 73 - 314.565 ms[39m
+[34m[39m
+2023-07-05 18:50:20 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 18:50:20 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 73 - 319.391 ms[39m
+[34m[39m
+2023-07-05 18:52:05 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 18:52:05 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 293.881 ms[39m
+[34m[39m
+2023-07-05 18:53:33 -0300-[32minfo[39m:[32mServer online in port: 3010[39m
+2023-07-05 18:53:36 -0300-[33mwarn[39m:[33mUsuário não autorizado![39m
+2023-07-05 18:53:36 -0300-[34mhttp[39m:[34mPOST /api/users/login: 401 72 - 331.801 ms[39m
+[34m[39m
+2023-07-05 18:53:50 -0300 - [32minfo[39m: [32mServer online in port: 3010[39m
+2023-07-05 19:18:14 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 296178 - 843.955 ms[39m
+[34m[39m
+2023-07-05 19:18:15 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 296178 - 396.476 ms[39m
+[34m[39m
+2023-07-05 19:18:17 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:18:17 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 372.442 ms[39m
+[34m[39m
+2023-07-05 19:25:45 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:25:45 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 305.668 ms[39m
+[34m[39m
+2023-07-05 19:26:04 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:26:04 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 299.491 ms[39m
+[34m[39m
+2023-07-05 19:26:28 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:26:28 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 288.996 ms[39m
+[34m[39m
+2023-07-05 19:27:16 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:27:16 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 308.517 ms[39m
+[34m[39m
+2023-07-05 19:27:30 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:27:30 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 278.800 ms[39m
+[34m[39m
+2023-07-05 19:27:57 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:27:57 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 292.765 ms[39m
+[34m[39m
+2023-07-05 19:34:33 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:34:33 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 289.405 ms[39m
+[34m[39m
+2023-07-05 19:36:22 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:36:22 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 273.864 ms[39m
+[34m[39m
+2023-07-05 19:36:30 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:36:30 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 73 - 380.862 ms[39m
+[34m[39m
+2023-07-05 19:37:30 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 200 1653 - 757.229 ms[39m
+[34m[39m
+2023-07-05 19:37:31 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 298072 - 1048.917 ms[39m
+[34m[39m
+2023-07-05 19:37:31 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 298072 - 397.694 ms[39m
+[34m[39m
+2023-07-05 19:37:38 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:37:38 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 287.306 ms[39m
+[34m[39m
+2023-07-05 19:37:47 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 200 1653 - 615.124 ms[39m
+[34m[39m
+2023-07-05 19:37:48 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 298072 - 511.637 ms[39m
+[34m[39m
+2023-07-05 19:37:48 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 298072 - 544.755 ms[39m
+[34m[39m
+2023-07-05 19:39:46 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:39:46 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 72 - 291.020 ms[39m
+[34m[39m
+2023-07-05 19:39:48 -0300 - [33mwarn[39m: [33mUsuário não autorizado![39m
+2023-07-05 19:39:48 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 401 75 - 295.929 ms[39m
+[34m[39m
+2023-07-05 19:39:52 -0300 - [34mhttp[39m: [34mPOST /api/users/login: 200 1653 - 642.630 ms[39m
+[34m[39m
+2023-07-05 19:39:53 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 298072 - 1076.956 ms[39m
+[34m[39m
+2023-07-05 19:39:53 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 298072 - 378.621 ms[39m
+[34m[39m
+2023-07-05 19:40:24 -0300 - [34mhttp[39m: [34mGET /api/products/products/jtyjtjtjtyjtytyj: 200 156 - 227.894 ms[39m
+[34m[39m
+2023-07-05 19:40:43 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 298072 - 879.030 ms[39m
+[34m[39m
+2023-07-05 19:40:43 -0300 - [34mhttp[39m: [34mGET /api/products/products/all: 200 298072 - 423.981 ms[39m
+[34m[39m
+2023-07-05 19:40:48 -0300 - [34mhttp[39m: [34mGET /api/products/products/iphone: 200 128402 - 491.232 ms[39m
+[34m[39m

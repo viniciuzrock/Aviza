@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pedido</title>
 </head>
 
 <body>
-
-    <!-- {{#each products}} -->
-    <h2>Aqui será o corpo do e-mail</h2>
-    <h1>Obrigado pela compra!</h1>
-    <p>Detalhes do pedido: </p>
-    <p>Nome: {{name}}</p>
-    <p>Preço: {{price}}</p>
-    <p>Imagem:
-        <img src="{{image}}" alt="" />
-    </p>
+    <h1>Detalhes do Pedido</h1>
+    {{#each products}}
+    <h2>Detalhes do {{this.productIndex}}º produto </h2>
+    <p>Nome: {{this.name}}</p>
+    <p>Preço: {{this.price}}</p>
+    <p>Imagem:</p>
+    <img src="{{this.image}}" alt="">
+    <hr>
+    {{/each}}
 </body>
 
 </html>

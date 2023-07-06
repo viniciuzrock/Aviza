@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express"
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import firebaseApp from "../../config/firebase";
+import Logger from "../../config/logger";
 
 class UserController {
 
@@ -8,16 +9,20 @@ class UserController {
         try {
             const { email, password } = req.body;
             const auth = getAuth()
+            console.log(email, password);
             await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
                 const user = userCredential.user;
+                console.log('Usuário criado!');
+
                 return res.status(201).json({
                     message: 'Usuário criado',
                     data: user
                 })
 
             }).catch((error) => {
+                console.log(error);
                 return res.status(400).json({
-                    message: '[Erro FirebaseAuth]: ' + error.message
+                    message: error.code
                 })
             })
         } catch (error) {
@@ -30,18 +35,19 @@ class UserController {
     static async login(req: Request, res: Response) {
         try {
             const { email, password } = req.body
-            console.log('Bateu');
-            console.log(email, password);
 
             const auth = getAuth(firebaseApp)
             await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+                console.log('Usuário logado!');
                 res.status(200).json({
                     data: userCredential.user
                 })
 
             }).catch((e) => {
+                Logger.warn('Usuário não autorizado!')
+                Logger.error(e)
                 res.status(401).json({
-                    message: '[Erro FirebaseAuth]: ' + e.message
+                    message: 'Acesso negado, verifique o e-mail e senha.'
                 })
             })
         } catch (error) {
