@@ -9,6 +9,7 @@ class UserController {
         try {
             const { email, password } = req.body;
             const auth = getAuth()
+            console.log(email, password);
             await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
                 const user = userCredential.user;
                 console.log('Usuário criado!');
@@ -19,8 +20,9 @@ class UserController {
                 })
 
             }).catch((error) => {
+                console.log(error);
                 return res.status(400).json({
-                    message: '[Erro FirebaseAuth]: ' + error.message
+                    message: error.code
                 })
             })
         } catch (error) {
@@ -43,8 +45,9 @@ class UserController {
 
             }).catch((e) => {
                 Logger.warn('Usuário não autorizado!')
+                Logger.error(e)
                 res.status(401).json({
-                    message: '[Erro FirebaseAuth]: ' + e.message
+                    message: 'Acesso negado, verifique o e-mail e senha.'
                 })
             })
         } catch (error) {

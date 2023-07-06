@@ -16,7 +16,6 @@ class ProductController {
     static async getProducts(req: Request, res: Response) {
         try {
             const searchProduct = req.params.prod
-
             // await axios.get("https://dummyjson.com/products").then((resp) => {
             await axios.get(`https://api.mercadolibre.com/sites/MLB/search?q=${searchProduct}`).then((resp) => {
                 const products = resp.data.results//resp.data.products
@@ -36,11 +35,12 @@ class ProductController {
 
     static async completePurchase(req: Request, res: Response) {
         try {
+            const { cartItems, email } = req.body
             console.log('Concluindo pedido...');
-            const data: Product[] = req.body
-            data.push(req.body)
-            console.log(data.pop());//REMOVENDO ULTIMO ITEM DA LISTA
 
+            const data: Product[] = cartItems
+            data.push(cartItems)
+            console.log(data.pop());//REMOVENDO ULTIMO ITEM DA LISTA
             const templateData = {
                 products: data.map((product, index) => ({
                     productIndex: index + 1,
@@ -56,7 +56,7 @@ class ProductController {
             const compiledTemplate = handlebars.compile(template);
             const html = compiledTemplate(templateData)
 
-            await sendEmailHTML("vinir.santoss@gmail.com", "Recebemos o seu pedido!", html).then(() => {
+            await sendEmailHTML(email, "Recebemos o seu pedido!", html).then(() => {
                 console.log('Email enviado!')
             }).catch((e) => {
                 console.log(e)
