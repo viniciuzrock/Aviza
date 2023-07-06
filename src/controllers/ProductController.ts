@@ -36,6 +36,9 @@ class ProductController {
     static async completePurchase(req: Request, res: Response) {
         try {
             const { cartItems, email } = req.body
+            console.log(req.body);
+            console.log(email);
+
             console.log('Concluindo pedido...');
 
             const data: Product[] = cartItems
@@ -63,6 +66,7 @@ class ProductController {
             })
         } catch (error) {
             console.log('[Error Email]:' + error);
+            console.log('aaa');
 
         }
     }
