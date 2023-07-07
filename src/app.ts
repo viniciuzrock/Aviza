@@ -10,7 +10,6 @@ const cors = require("cors")
 const port = config.get<number>("port")
 const app = express()
 
-//use cors
 app.use(cors({
     origin: "*",
     credentials: true
