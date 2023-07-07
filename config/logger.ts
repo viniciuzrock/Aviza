@@ -1,5 +1,10 @@
 import winston from "winston";
 import config from "config";
+import path from "path";
+
+const rootDirectory = path.resolve(__dirname, '..');
+const logFilePath = path.join(rootDirectory, 'logs/all.log');
+const logErrorsPath = path.join(rootDirectory, 'logs/error.log');
 
 const levels = {
     error: 0,
@@ -40,10 +45,11 @@ const format = winston.format.combine(
 const transports = [
     new winston.transports.Console(),
     new winston.transports.File({
-        filename: 'logs/all.log',
+        // filename: 'logs/all.log',
+        filename: logFilePath,
     }),
     new winston.transports.File({
-        filename: `logs/error.log`,
+        filename: logErrorsPath,
         level: 'error'
     })
 ]
