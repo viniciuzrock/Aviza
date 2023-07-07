@@ -1,4 +1,4 @@
 export default {
-    port: 3010,
-    env: 'production'
+    "port": 3010,
+    "env": "production"
 }
