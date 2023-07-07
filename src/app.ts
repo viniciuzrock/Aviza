@@ -19,4 +19,7 @@ app.use(morganMiddleware)
 app.use("/api/products", ProductRoutes)
 app.use("/api/users", UserRoutes)
 app.use(express.static(path.join(__dirname, 'public')))
+
+const enviroment = process.env.NODE_ENV || 'development'
+
 app.listen(port, async () => Logger.info(`Server online in port: ${port}`))
