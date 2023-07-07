@@ -2,12 +2,10 @@
     "name": "aviza-api",
     "version": 2,
     "public": true,
-    "build": [
-        {
-            "src": "src/app.ts",
-            "use": "@vercel/node"
-        }
-    ],
+    "build": {
+        "src": "src/app.ts",
+        "use": "@vercel/node"
+    },
     "routes": [
         {
             "src": "(.*)",
