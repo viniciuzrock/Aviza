@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express"
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import firebaseApp from "../config/firebase";
-import Logger from "../config/logger";
+import firebaseApp from "../../config/firebase";
+import Logger from "../../config/logger";
 
 class UserController {
 
