@@ -24,9 +24,9 @@ class ProductController {
                     productsList.push(products[x])
                 }
                 console.log('Produtos resgatados');
-                res.json(productsList)
+                res.status(200).json(productsList)
             }).catch((e) => {
-                res.json(e)
+                res.status(500).json(e)
             })
         } catch (e) {
             console.log(e)
@@ -36,9 +36,6 @@ class ProductController {
     static async completePurchase(req: Request, res: Response) {
         try {
             const { cartItems, email } = req.body
-            console.log(req.body);
-            console.log(email);
-
             console.log('Concluindo pedido...');
 
             const data: Product[] = cartItems
@@ -60,14 +57,18 @@ class ProductController {
             const html = compiledTemplate(templateData)
 
             await sendEmailHTML(email, "Recebemos o seu pedido!", html).then(() => {
-                console.log('Email enviado!')
+                res.status(200).json({
+                    message: 'Email enviado!'
+                })
             }).catch((e) => {
-                console.log(e)
+                res.status(400).json({
+                    message: 'Email não enviado!'
+                })
             })
         } catch (error) {
-            console.log('[Error Email]:' + error);
-            console.log('aaa');
-
+            res.status(500).json({
+                message: '[Error Email Controller]:' + error
+            })
         }
     }
 }
